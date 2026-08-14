@@ -1,0 +1,22 @@
+name: CI
+
+# The server has no runtime dependencies and needs no credentials, so CI is
+# simply: does it compile, and does the compiled output still speak the
+# protocol? The smoke test points at a closed port, so it never touches a
+# real deployment.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm install
+      - run: npm run build
+      - run: npm run smoke

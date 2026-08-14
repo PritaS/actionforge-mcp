@@ -1,0 +1,43 @@
+{
+  "name": "actionforge-mcp",
+  "version": "1.0.1",
+  "description": "MCP server publishing an ActionForge account's tools to any MCP client",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "actionforge",
+    "tools",
+    "claude"
+  ],
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "actionforge-mcp": "dist/server.js"
+  },
+  "main": "dist/server.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=20.12"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && chmod +x dist/server.js",
+    "smoke": "node scripts/smoke.mjs",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3",
+    "@types/node": "^26.1.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PritaS/actionforge-mcp.git"
+  },
+  "homepage": "https://pritas.github.io/actionforge_ui/",
+  "bugs": {
+    "url": "https://github.com/PritaS/actionforge-mcp/issues"
+  },
+  "author": "Prita Sharma"
+}
