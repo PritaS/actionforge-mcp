@@ -1,0 +1,36 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.pritas/actionforge",
+  "description": "Expose an ActionForge account's dynamically-generated tools to any MCP client. Agents describe a computation; ActionForge generates, deploys, and invokes a deterministic serverless function — no code written by hand.",
+  "repository": {
+    "url": "https://github.com/PritaS/actionforge-mcp",
+    "source": "github"
+  },
+  "version": "1.0.1",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "actionforge-mcp",
+      "version": "1.0.1",
+      "transport": {
+        "type": "stdio"
+      },
+      "environmentVariables": [
+        {
+          "name": "ACTIONFORGE_API_KEY",
+          "description": "Your ActionForge API key. Generate one from the ActionForge API or dashboard.",
+          "isRequired": true,
+          "isSecret": true,
+          "format": "string"
+        },
+        {
+          "name": "ACTIONFORGE_URL",
+          "description": "Base URL of your ActionForge deployment. Defaults to the hosted service if unset.",
+          "isRequired": false,
+          "isSecret": false,
+          "format": "string"
+        }
+      ]
+    }
+  ]
+}
