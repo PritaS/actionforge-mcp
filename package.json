@@ -1,6 +1,6 @@
 {
   "name": "actionforge-mcp",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "mcpName": "io.github.PritaS/actionforge",
   "description": "MCP server publishing an ActionForge account's tools to any MCP client",
   "keywords": [
